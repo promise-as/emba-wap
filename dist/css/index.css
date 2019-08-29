@@ -1,5 +1,5 @@
 @charset "UTF-8";
-html, body, div, a, p, span, ul, li {
+html, body, div, a, p, span, ul, li, input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -53,7 +53,6 @@ input, textarea, select {
 
 select {
   border: none;
-  text-indent: 1em;
 }
 
 option {
@@ -61,8 +60,7 @@ option {
   font-family: '微软雅黑';
 }
 
-input[type="text"],
-select {
+input[type='text'] {
   border: none;
   text-indent: 1em;
 }
@@ -83,17 +81,21 @@ input[type="submit"] {
   overflow: hidden;
 }
 
-.schools .content .cont-detail .detail-text .text-row, .degree .content .cont-list, .degree .detail-item .item-text .text .text-row {
+.schools .content .cont-detail .detail-text .text-row, .degree .content .cont-list, .degree .detail-item .item-text .text .text-row, .invite-popup .invite-data ul li, .invite-popup .invite-data .invite-form {
   zoom: 1;
 }
 
-.schools .content .cont-detail .detail-text .text-row:after, .degree .content .cont-list:after, .degree .detail-item .item-text .text .text-row:after {
+.schools .content .cont-detail .detail-text .text-row:after, .degree .content .cont-list:after, .degree .detail-item .item-text .text .text-row:after, .invite-popup .invite-data ul li:after, .invite-popup .invite-data .invite-form:after {
   clear: both;
 }
 
-.schools .content .cont-detail .detail-text .text-row:before, .degree .content .cont-list:before, .degree .detail-item .item-text .text .text-row:before, .schools .content .cont-detail .detail-text .text-row:after, .degree .content .cont-list:after, .degree .detail-item .item-text .text .text-row:after {
+.schools .content .cont-detail .detail-text .text-row:before, .degree .content .cont-list:before, .degree .detail-item .item-text .text .text-row:before, .invite-popup .invite-data ul li:before, .invite-popup .invite-data .invite-form:before, .schools .content .cont-detail .detail-text .text-row:after, .degree .content .cont-list:after, .degree .detail-item .item-text .text .text-row:after, .invite-popup .invite-data ul li:after, .invite-popup .invite-data .invite-form:after {
   content: "";
   display: table;
+}
+
+body {
+  padding-bottom: 1.28rem;
 }
 
 .wrap {
@@ -399,7 +401,7 @@ input[type="submit"] {
   padding-bottom: 0.36rem;
 }
 
-.different .content .tbody .tbody-row .cont-col::nth-of-type(3) {
+.different .content .tbody .tbody-row .cont-col:nth-of-type(3) {
   padding-top: 0.36rem;
   padding-bottom: 0.36rem;
 }
@@ -511,6 +513,7 @@ input[type="submit"] {
 
 .degree .content {
   padding-top: 0.53333rem;
+  margin-bottom: 0.53333rem;
 }
 
 .degree .content .cont-list {
@@ -526,12 +529,18 @@ input[type="submit"] {
   margin-bottom: 0.26667rem;
   border: solid 1px #bbbbbb;
   font-size: 0.32rem;
+  color: #333333;
+}
+
+.degree .content .cont-list li.active {
+  background-color: #576cc8;
+  border: 1px solid #576cc8;
+  color: #ffffff;
 }
 
 .degree .content .cont-list li span {
   width: 100%;
   line-height: 0.8rem;
-  color: #333333;
   text-align: center;
 }
 
@@ -640,4 +649,398 @@ input[type="submit"] {
   font-size: 0.34667rem;
   line-height: 1.06667rem;
   color: #576cc8;
+}
+
+/* 报名 */
+.apply {
+  width: 100%;
+  height: 9.76rem;
+  background: url("../images/apply-bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 1.6rem;
+  margin-top: -1.06667rem;
+}
+
+/* 预约 */
+.appointment {
+  padding: 1.06667rem 0.46667rem 0.8rem;
+  background: url("../images/appointment-bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.appointment .title-module {
+  color: #fff;
+}
+
+.appointment .title-module .en {
+  color: #fff;
+}
+
+.appointment .sign-up-appoint {
+  width: 2.8rem;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  background-color: #f0552f;
+  margin: 0.4rem auto 0;
+  font-size: 0.38667rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+.appointment .sign-up-appoint::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.2rem solid transparent;
+  border-right: 0.2rem solid transparent;
+  border-top: 0.26667rem solid #f0552f;
+  position: absolute;
+  bottom: -0.26667rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.appointment .sign-in {
+  margin: 0.53333rem auto 0.4rem;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-radius: 0.26667rem;
+  text-align: center;
+  font-size: 0.37333rem;
+  padding: 0.53333rem;
+}
+
+.appointment .sign-in input {
+  width: 100%;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  border: solid 1px #cccccc;
+  margin-top: 0.32rem;
+}
+
+.appointment .sign-in input[type='submit'] {
+  width: 100%;
+  line-height: 1.01333rem;
+  font-size: 0.42667rem;
+  border: none;
+  background-color: #f88531;
+  color: #fff;
+  border-radius: 0.50667rem;
+}
+
+.appointment .sign-in select {
+  width: 100%;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  background: url("../images/select-icon.png") no-repeat 7.41333rem #fff;
+  border: solid 1px #cccccc;
+  padding: 0 0.37333rem;
+  color: #999999;
+}
+
+.appointment .sign-in select option {
+  color: #333333;
+}
+
+.appointment .sign-in select option:first-child {
+  color: #999999;
+}
+
+.appointment .hint {
+  font-size: 0.26667rem;
+  line-height: 0.26667rem;
+  color: #fff;
+}
+
+.appointment .hint span {
+  color: #f88531;
+}
+
+.footer {
+  width: 100%;
+  height: 1.33333rem;
+  background-color: #333333;
+  color: rgba(250, 250, 250, 0.4);
+  text-align: center;
+  font-size: 0.26667rem;
+  line-height: 0.26667rem;
+  padding-top: 0.26667rem;
+}
+
+.footer p {
+  margin-bottom: 0.13333rem;
+}
+
+.footer-bar {
+  width: 10rem;
+  height: 1.28rem;
+  background: url("../images/footer-bar.png") no-repeat #fff;
+  background-size: 100% 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+
+.footer-bar a {
+  width: 33.33%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* 遮罩层 */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 110;
+  display: none;
+}
+
+/* 800弹窗 */
+.invite-popup {
+  width: 8.8rem;
+  height: 12.8rem;
+  background: url("../images/invite-popup.png") no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 120;
+  padding-top: 0.53333rem;
+  display: none;
+}
+
+.invite-popup .title {
+  text-align: center;
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.invite-popup .invite-data {
+  width: 100%;
+  padding: 0.4rem;
+}
+
+.invite-popup .invite-data ul li {
+  padding-top: 0.26667rem;
+}
+
+.invite-popup .invite-data ul li .icon {
+  display: block;
+  width: 0.26667rem;
+  height: 0.26667rem;
+  background: url("../images/invite-popup-icon.png") no-repeat;
+  background-size: 100% 100%;
+  margin-right: 0.13333rem;
+  float: left;
+}
+
+.invite-popup .invite-data ul li .detail {
+  float: left;
+  width: 7.6rem;
+  color: #333333;
+}
+
+.invite-popup .invite-data ul li .detail p {
+  font-size: 0.37333rem;
+  line-height: 0.37333rem;
+  font-weight: bold;
+  margin-bottom: 0.26667rem;
+}
+
+.invite-popup .invite-data ul li .detail span {
+  display: block;
+  float: left;
+  min-width: 1.41333rem;
+  margin-bottom: 0.32rem;
+  padding-left: 0.41333rem;
+  padding-right: 0.26667rem;
+  cursor: pointer;
+  font-size: 0.32rem;
+  height: 0.32rem;
+  line-height: 0.32rem;
+  position: relative;
+}
+
+.invite-popup .invite-data ul li .detail span:last-of-type {
+  padding-right: 0;
+}
+
+.invite-popup .invite-data ul li .detail span:before {
+  content: "";
+  width: 0.29333rem;
+  height: 0.29333rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: text-top;
+}
+
+.invite-popup .invite-data ul li .detail span:after {
+  content: "";
+  width: 0.18667rem;
+  height: 0.18667rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 0.05333rem;
+  left: 0.05333rem;
+}
+
+.invite-popup .invite-data ul li .detail span.active:before {
+  border: 1px solid #999999;
+}
+
+.invite-popup .invite-data ul li .detail span.active:after {
+  background-color: #576cc8;
+}
+
+.invite-popup .invite-data .invite-form {
+  padding-top: 0.4rem;
+}
+
+.invite-popup .invite-data .invite-form input {
+  float: left;
+  width: 5.46667rem;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  border: 1px solid #bbbbbb;
+  border-radius: 0.08rem;
+  font-size: 0.37333rem;
+  outline: none;
+  margin-right: 0.13333rem;
+  background-color: #ffffff;
+}
+
+.invite-popup .invite-data .invite-form input.user-tel {
+  background: url("https://img.thea.cn/public/platform/thea/201906/hbj/form-popup/images/star.png") no-repeat 5% center;
+  text-indent: 1.5em;
+}
+
+.invite-popup .invite-data .invite-form .submit {
+  width: 2.4rem;
+  height: 0.93333rem;
+  background-color: #f88531;
+  border-radius: 0.13333rem;
+  border: none;
+  margin-right: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.42667rem;
+}
+
+.invite-popup .close {
+  display: block;
+  width: 1.06667rem;
+  height: 1.06667rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* 预约试听弹窗 */
+.appoint-popup {
+  width: 7.46667rem;
+  height: 10.93333rem;
+  background: url("../images/appointment-popup.png") no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 120;
+  text-align: center;
+  padding-top: 0.4rem;
+  display: none;
+}
+
+.appoint-popup .title {
+  font-size: 0.4rem;
+  line-height: 0.64rem;
+  color: #ffffff;
+  margin-bottom: 0.26667rem;
+  font-weight: bold;
+}
+
+.appoint-popup .title strong {
+  display: block;
+  font-size: 0.48rem;
+  font-weight: bold;
+}
+
+.appoint-popup .sign-in {
+  padding: 0.66667rem 0.53333rem 0.77333rem;
+}
+
+.appoint-popup .sign-in input {
+  width: 100%;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  margin-bottom: 0.32rem;
+  background-color: #f8f8f8;
+  border-radius: 0.08rem;
+  border: solid 1px #cccccc;
+  font-size: 0.37333rem;
+}
+
+.appoint-popup .sign-in input[type="submit"] {
+  background-color: #f88531;
+  border: solid 1px #f88531;
+  color: #ffffff;
+  font-size: 0.42667rem;
+}
+
+.appoint-popup .sign-in select {
+  width: 100%;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  margin-bottom: 0.32rem;
+  border-radius: 0.08rem;
+  border: solid 1px #cccccc;
+  font-size: 0.37333rem;
+  background: url("../images/select-icon.png") no-repeat 5.84rem center #f8f8f8;
+  padding: 0 0.37333rem;
+  color: #999999;
+}
+
+.appoint-popup .sign-in select option {
+  color: #333333;
+}
+
+.appoint-popup .sign-in select option:first-child {
+  color: #999999;
+}
+
+.appoint-popup .close {
+  display: block;
+  width: 1.06667rem;
+  height: 1.06667rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
 }

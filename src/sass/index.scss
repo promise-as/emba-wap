@@ -8,7 +8,7 @@ $browser-default-font-size: 75px !default;
 
 $padding-size: pr(20px);
 
-html, body, div, a, p, span, ul, li {
+html, body, div, a, p, span, ul, li, input {
   box-sizing: border-box;
 }
 
@@ -53,7 +53,6 @@ input, textarea, select {
 
 select {
   border: none;
-  text-indent: 1em;
 }
 
 option {
@@ -61,7 +60,7 @@ option {
   font-family: '微软雅黑';
 }
 
-input[type='text'], select {
+input[type='text'] {
   border: none;
   text-indent: 1em;
 }
@@ -92,6 +91,10 @@ input[type="submit"] {
     content: "";
     display: table;
   }
+}
+
+body{
+  padding-bottom: pr(96px);
 }
 
 .wrap {
@@ -329,7 +332,7 @@ input[type="submit"] {
             padding-top: pr(27px);
             padding-bottom: pr(27px);
           }
-          &::nth-of-type(3){
+          &:nth-of-type(3){
             padding-top: pr(27px);
             padding-bottom: pr(27px);
           }
@@ -441,6 +444,7 @@ input[type="submit"] {
   padding: 0 $padding-size;
   .content{
     padding-top: pr(40px);
+    margin-bottom: pr(40px);
     .cont-list{
       @extend %clearfix;
       margin-right: -$padding-size;
@@ -453,12 +457,17 @@ input[type="submit"] {
         margin-bottom: $padding-size;
         border: solid 1px #bbbbbb;
         font-size: pr(24px);
+        color: #333333;
+        &.active{
+          background-color: $bg-color;
+          border: 1px solid $bg-color;
+          color: #ffffff;
+        }
         span{
           @extend %in-b;
           @extend %one;
           width: 100%;
           line-height: pr(60px);
-          color: #333333;
           text-align: center;
         }
       }
@@ -567,5 +576,364 @@ input[type="submit"] {
     font-size: pr(26px);
     line-height: pr(80px);
     color: #576cc8;
+  }
+}
+
+/* 报名 */
+.apply{
+  width: 100%;
+  height: pr(732px);
+  background: url('../images/apply-bg.png') no-repeat;
+  background-size: 100% 100%;
+  padding-top: pr(120px);
+  margin-top: pr(-80px);
+}
+
+/* 预约 */
+.appointment{
+  padding: pr(80px) pr(35px) pr(60px);
+  background: url('../images/appointment-bg.png') no-repeat;
+  background-size: 100% 100%;
+  .title-module{
+    color: #fff;
+    .en{
+      color: #fff;
+    }
+  }
+  .sign-up-appoint{
+    width: pr(210px);
+    height: pr(70px);
+    line-height: pr(70px);
+    background-color: #f0552f;
+    margin: pr(30px) auto 0;
+    font-size: pr(29px);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    &::after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: pr(15px) solid transparent;
+      border-right: pr(15px) solid transparent;
+      border-top: pr(20px) solid #f0552f;
+
+      position: absolute;
+      bottom: pr(-20px);
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  .sign-in{
+    margin: pr(40px) auto pr(30px);
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: pr(20px);
+    text-align: center;
+    font-size: pr(28px);
+    padding: pr(40px);
+    input{
+      width: 100%;
+      height: pr(70px);
+      line-height: pr(70px);
+      border: solid 1px #cccccc;
+      margin-top: pr(24px);
+    }
+    input[type='submit']{
+      width: 100%;
+      line-height: pr(76px);
+      font-size: pr(32px);
+      border: none;
+      background-color: $txt-color;
+      color: #fff;
+      border-radius: pr(38px);
+    }
+    select{
+      width: 100%;
+      height: pr(70px);
+      line-height: pr(70px);
+      background: url('../images/select-icon.png') no-repeat pr(556px) #fff;
+      border: solid 1px #cccccc;
+      padding: 0 pr(28px);
+      color: #999999;
+      option{
+        color: #333333;
+        &:first-child{
+          color: #999999;
+        }
+      }
+    }
+  }
+  .hint{
+    font-size: pr(20px);
+    line-height: pr(20px);
+    color: #fff;
+    span{
+     color: $txt-color;
+    }
+  }
+}
+
+.footer{
+  width: 100%;
+  height: pr(100px);
+  background-color: #333333;
+
+  color: rgba(250, 250, 250, 0.4);
+  text-align: center;
+  font-size: pr(20px);
+  line-height: pr(20px);
+  padding-top: pr(20px);
+  p{
+    margin-bottom: pr(10px);
+  }
+}
+
+.footer-bar{
+  width: pr(750px);
+  height: pr(96px);
+  background: url('../images/footer-bar.png') no-repeat #fff;
+  background-size: 100% 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  a{
+    width: 33.33%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+/* 遮罩层 */
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 110;
+  display: none;
+}
+
+/* 800弹窗 */
+.invite-popup{
+  width: pr(660px);
+  height: pr(960px);
+  background: url("../images/invite-popup.png") no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 120;
+  padding-top: pr(40px);
+  display: none;
+  .title{
+    text-align: center;
+    font-size: pr(36px);
+    line-height: pr(48px);
+    color: #ffffff;
+    margin-bottom: pr(30px);
+  }
+  .invite-data{
+    width: 100%;
+    padding: pr(30px);
+    ul {
+      li {
+        @extend %clearfix;
+        padding-top: pr(20px);
+        .icon{
+          display: block;
+          width: pr(20px);
+          height: pr(20px);
+          background: url("../images/invite-popup-icon.png") no-repeat;
+          background-size: 100% 100%;
+          margin-right: pr(10px);
+          float: left;
+        }
+        .detail{
+          float: left;
+          width: pr(570px);
+          color: #333333;
+          p {
+            font-size: pr(28px);
+            line-height: pr(28px);
+            font-weight: bold;
+            margin-bottom: pr(20px);
+          }
+          span {
+            display: block;
+            float: left;
+            min-width: pr(106px);
+            margin-bottom: pr(24px);
+            padding-left: pr(31px);
+            padding-right: pr(20px);
+            cursor: pointer;
+            font-size: pr(24px);
+            height: pr(24px);
+            line-height: pr(24px);
+            position: relative;
+            &:last-of-type{
+              padding-right: 0;
+            }
+            &:before {
+              content: "";
+              width: pr(22px);
+              height: pr(22px);
+              position: absolute;
+              left: 0;
+              top: 0;
+              border-radius: 100%;
+              background-color: #fff;
+              border: 1px solid #aaa;
+              box-sizing: border-box;
+              vertical-align: text-top;
+            }
+            &:after{
+              content: "";
+              width: pr(14px);
+              height: pr(14px);
+              border-radius: 100%;
+              position: absolute;
+              top: pr(4px);
+              left: pr(4px);
+            }
+            &.active{
+              &:before {
+                border: 1px solid #999999;
+              }
+              &:after{
+                background-color: $bg-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .invite-form {
+      @extend %clearfix;
+      padding-top: pr(30px);
+      input {
+        float: left;
+        width: pr(410px);
+        height: pr(70px);
+        line-height: pr(70px);
+        border: 1px solid #bbbbbb;
+        border-radius: pr(6px);
+        font-size: pr(28px);
+        outline: none;
+        margin-right: pr(10px);
+        background-color: #ffffff;
+        &.user-tel{
+          background: url("https://img.thea.cn/public/platform/thea/201906/hbj/form-popup/images/star.png") no-repeat 5% center;
+          text-indent: 1.5em;
+        }
+      }
+      .submit{
+        width: pr(180px);
+        height: pr(70px);
+        background-color: $txt-color;
+        border-radius: pr(10px);
+        border: none;
+        margin-right: 0;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: pr(32px)
+      }
+    }
+  }
+  .close{
+    display: block;
+    width: pr(80px);
+    height: pr(80px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+  }
+}
+
+/* 预约试听弹窗 */
+.appoint-popup{
+  width: pr(560px);
+  height: pr(820px);
+  background: url("../images/appointment-popup.png") no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 120;
+  text-align: center;
+  padding-top: pr(30px);
+  display: none;
+  .title{
+    font-size: pr(30px);
+    line-height: pr(48px);
+    color: #ffffff;
+    margin-bottom: pr(20px);
+    font-weight: bold;
+    strong{
+      display: block;
+      font-size: pr(36px);
+      font-weight: bold;
+    }
+  }
+  .sign-in{
+    padding: pr(50px) pr(40px) pr(58px);
+    input{
+      width: 100%;
+      height: pr(70px);
+      line-height: pr(70px);
+      margin-bottom: pr(24px);
+      background-color: #f8f8f8;
+      border-radius: pr(6px);
+      border: solid 1px #cccccc;
+      font-size: pr(28px);
+    }
+    input[type="submit"]{
+      background-color: $txt-color;
+      border: solid 1px $txt-color;
+      color: #ffffff;
+      font-size: pr(32px);
+    }
+    select{
+      width: 100%;
+      height: pr(70px);
+      line-height: pr(70px);
+      margin-bottom: pr(24px);
+      border-radius: pr(6px);
+      border: solid 1px #cccccc;
+      font-size: pr(28px);
+      background: url('../images/select-icon.png') no-repeat pr(438px) center #f8f8f8;
+      padding: 0 pr(28px);
+      color: #999999;
+      option{
+        color: #333333;
+        &:first-child{
+          color: #999999;
+        }
+      }
+    }
+  }
+  .close{
+    display: block;
+    width: pr(80px);
+    height: pr(80px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
   }
 }
