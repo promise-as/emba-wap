@@ -60,5 +60,4 @@ $(function () {
     $('.mask').hide();
     $('.appoint-popup').hide();
   });
-
 });

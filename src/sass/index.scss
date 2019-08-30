@@ -51,10 +51,6 @@ input, textarea, select {
   font-family: '微软雅黑';
 }
 
-select {
-  border: none;
-}
-
 option {
   text-indent: 1em;
   font-family: '微软雅黑';
@@ -65,7 +61,7 @@ input[type='text'] {
   text-indent: 1em;
 }
 
-input[type="submit"] {
+input[type="submit"], select {
   border: none;
 }
 
@@ -98,7 +94,7 @@ body{
 }
 
 .wrap {
-  max-width: pr(750px);
+  width: pr(750px);
   margin: 0 auto;
   overflow: hidden;
 }
@@ -264,7 +260,7 @@ body{
 /* 区别 */
 .different{
   // height: pr(1050px);
-  background: url('../images/bg_1.png') no-repeat;
+  background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/bg_1.png') no-repeat;
   background-size: 100% 100%;
   padding: pr(40px) $padding-size pr(53px);
   .title-module{
@@ -377,7 +373,7 @@ body{
           @extend %in-b;
           width: pr(33px);
           height: pr(28px);
-          background: url('../images/icon_5.png') no-repeat;
+          background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/icon_5.png') no-repeat;
           background-size: 100% 100%;
         }
       }
@@ -430,7 +426,7 @@ body{
         @extend %in-b;
         width: pr(30px);
         height: pr(30px);
-        background: url('../images/icon_6.png') no-repeat;
+        background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/icon_6.png') no-repeat;
         background-size: 100% 100%;
         margin-left: $padding-size;
         vertical-align: middle;
@@ -510,7 +506,7 @@ body{
           @extend %in-b;
           width: pr(33px);
           height: pr(28px);
-          background: url('../images/icon_5.png') no-repeat;
+          background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/icon_5.png') no-repeat;
           background-size: 100% 100%;
         }
       }
@@ -539,7 +535,7 @@ body{
           }
           .row-val{
             float: left;
-            width: pr(543px);
+            width: pr(500px);
             color: #333333;
             line-height: pr(36px);
           }
@@ -562,7 +558,7 @@ body{
         @extend %in-b;
         width: pr(30px);
         height: pr(30px);
-        background: url('../images/icon_6.png') no-repeat;
+        background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/icon_6.png') no-repeat;
         background-size: 100% 100%;
         margin-left: $padding-size;
         vertical-align: middle;
@@ -583,16 +579,16 @@ body{
 .apply{
   width: 100%;
   height: pr(732px);
-  background: url('../images/apply-bg.png') no-repeat;
+  background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/apply-bg.png') no-repeat;
   background-size: 100% 100%;
   padding-top: pr(120px);
-  margin-top: pr(-80px);
+  margin-top: pr(-100px);
 }
 
 /* 预约 */
 .appointment{
   padding: pr(80px) pr(35px) pr(60px);
-  background: url('../images/appointment-bg.png') no-repeat;
+  background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/appointment-bg.png') no-repeat;
   background-size: 100% 100%;
   .title-module{
     color: #fff;
@@ -653,7 +649,7 @@ body{
       width: 100%;
       height: pr(70px);
       line-height: pr(70px);
-      background: url('../images/select-icon.png') no-repeat pr(556px) #fff;
+      background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/select-icon.png') no-repeat pr(556px) #fff;
       border: solid 1px #cccccc;
       padding: 0 pr(28px);
       color: #999999;
@@ -669,6 +665,7 @@ body{
     font-size: pr(20px);
     line-height: pr(20px);
     color: #fff;
+    text-align: center;
     span{
      color: $txt-color;
     }
@@ -693,7 +690,7 @@ body{
 .footer-bar{
   width: pr(750px);
   height: pr(96px);
-  background: url('../images/footer-bar.png') no-repeat #fff;
+  background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/footer-bar.png') no-repeat #fff;
   background-size: 100% 100%;
   display: flex;
   position: fixed;
@@ -722,7 +719,7 @@ body{
 .invite-popup{
   width: pr(660px);
   height: pr(960px);
-  background: url("../images/invite-popup.png") no-repeat;
+  background: url("https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/invite-popup.png") no-repeat;
   background-size: 100% 100%;
   position: fixed;
   top: 0;
@@ -751,7 +748,7 @@ body{
           display: block;
           width: pr(20px);
           height: pr(20px);
-          background: url("../images/invite-popup-icon.png") no-repeat;
+          background: url("https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/invite-popup-icon.png") no-repeat;
           background-size: 100% 100%;
           margin-right: pr(10px);
           float: left;
@@ -864,7 +861,7 @@ body{
 .appoint-popup{
   width: pr(560px);
   height: pr(820px);
-  background: url("../images/appointment-popup.png") no-repeat;
+  background: url("https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/appointment-popup.png") no-repeat;
   background-size: 100% 100%;
   position: fixed;
   top: 0;
@@ -914,7 +911,7 @@ body{
       border-radius: pr(6px);
       border: solid 1px #cccccc;
       font-size: pr(28px);
-      background: url('../images/select-icon.png') no-repeat pr(438px) center #f8f8f8;
+      background: url('https://img.thea.cn/public/platform/thea/201908/hbj/emba-wap/images/select-icon.png') no-repeat pr(438px) center #f8f8f8;
       padding: 0 pr(28px);
       color: #999999;
       option{
